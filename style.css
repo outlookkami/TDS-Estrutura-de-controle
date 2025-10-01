@@ -51,7 +51,48 @@ h1{
     margin-bottom: 20px;
 }
 
-/* Estilos dos campos do formulário */
+/* 5. Estilos dos campos do formulário */
 input, button{
+    width: 100%;
+    /* Garante que o padding não afete a largura total */
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 16px;
+    font-family: var(--fonte-principal);
+    border-radius: 8px;
+    border: 1px solid var(--cor-borda);
+    transition: all 0.3s ease;
+}
 
+input:focus{
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+button{
+    cursor: pointer;
+    font-weight: 600;
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+}
+
+button:hover{
+    opacity: 0.85;
+}
+
+#resultado{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    min-height: 25px;
+    color: var(--cor-primaria);
+    opacity: 0.85;
+    transition: opacity 0.5s ease;
+}
+
+#resultado:visivel{
+    opacity: 1;
 }
