@@ -1,18 +1,17 @@
 /* Fontes e variáveis de cor */
-
-@import url('https://fonts.googleapis.com/css2?family=Popins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 :root{
-    --cor-fundo: #f4f7f9;
+    --cor-fundo: #f4f7f9; 
     --cor-container: #ffffff;
-    --cor-primaria: #007bff;
+    --cor-primaria: #9023cf;
     --cor-texto-principal: #333333;
     --cor-texto-secundario: #6c757d;
     --cor-borda: #dee2e6;
     --fonte-principal: 'Popins', sans-serif;
 }
 
-/* 2, Estilos */
+/* 2. Estilos  Gerais*/
 
 body{
     background-color: var(--cor-fundo);
@@ -23,13 +22,23 @@ body{
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    /* impede que o conteúdo do body afete o canvas */
+    overflow: hidden;
 }
 
+
+/* Estilo do canvas de fundo */
 #background-canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Garante que o canvas fique atrás de todo o conteúdo */
     z-index: -1;
 }
 
-/* 4. O container do formulário (Design Clássico) */
+/* 4. O container do formulário (Desing Clássico) */
 .container{
     width: 380px;
     padding: 40px;
@@ -37,7 +46,7 @@ body{
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border: 1px solid var(--cor-borda);
+    border: 1px solid var(--cor-borda);    
 }
 
 h1{
@@ -48,7 +57,8 @@ h1{
 .subtitulo{
     color: var(--cor-texto-secundario);
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 30px; 
+    /* mudei o margin bottom para 30px era 20px*/
 }
 
 /* 5. Estilos dos campos do formulário */
@@ -57,7 +67,9 @@ input, button{
     /* Garante que o padding não afete a largura total */
     box-sizing: border-box;
     margin: 10px 0;
-    padding: 12px;
+    /* adicionei um margin para colocar espaçamento */
+    padding: 14px;
+    /* mudei o padding para 14px era 12px*/
     font-size: 16px;
     font-family: var(--fonte-principal);
     border-radius: 8px;
@@ -83,16 +95,17 @@ button:hover{
     opacity: 0.85;
 }
 
+/* 6. EStilo do resultado */
 #resultado{
     margin-top: 20px;
     font-size: 18px;
     font-weight: 600;
     min-height: 25px;
-    color: var(--cor-primaria);
-    opacity: 0.85;
+    color: var(--cor-primaria); 
+    opacity: 0;
     transition: opacity 0.5s ease;
 }
 
-#resultado:visivel{
+#resultado.visivel{
     opacity: 1;
 }
